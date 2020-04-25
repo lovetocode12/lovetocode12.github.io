@@ -12,3 +12,15 @@ if (navigator.serviceWorker) {
 
     });
 }
+const now = performance.now();
+let worker = new Worker('./js/count_worker.js');
+worker.onmessage = (({ data }) => {
+    console.log('From Wroker', data.result);
+});
+// let count = 0;
+// for (let index = 0; index < 2000000000; index++) {
+//     count++;
+// }
+worker.postMessage({ type: 'getCount' });
+console.log(performance.now() - now);
+alert('HHHHHHHHHHHHHHHHH')
