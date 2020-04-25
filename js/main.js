@@ -23,4 +23,4 @@ worker.onmessage = (({ data }) => {
 // }
 worker.postMessage({ type: 'getCount' });
 console.log(performance.now() - now);
-alert('HHHHHHHHHHHHHHHHH')
+// alert('HHHHHHHHHHHHHHHHH')
